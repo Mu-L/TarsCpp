@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 if [ $# -lt 3 ]
 then
@@ -49,8 +50,14 @@ do
 	mv $FILE.tmp $FILE
 done
 
-rename "DemoServer" "$SERVER" $SRC_FILE
-rename "DemoServant" "$SERVANT" $SRC_FILE
+# rename "DemoServer" "$SERVER" $SRC_FILE
+# rename "DemoServant" "$SERVANT" $SRC_FILE
+
+mv DemoServer.h ${SERVER}.h
+mv DemoServer.cpp ${SERVER}.cpp
+mv DemoServantImp.h ${SERVANT}Imp.h
+mv DemoServantImp.cpp ${SERVANT}Imp.cpp
+
 
 cd ../../
 
